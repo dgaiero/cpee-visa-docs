@@ -142,7 +142,8 @@
 <span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">.. module:: agilent_e3640a</span>
 <span class="sd">    :platform: Windows</span>
-<span class="sd">    :synopsis: Agilent E3640A basic VISA library for python utilizng the super Instrument VISA template.</span>
+<span class="sd">    :synopsis: Agilent E3640A basic VISA library for python</span>
+<span class="sd">        utilizng the super Instrument VISA template.</span>
 
 <span class="sd">.. moduleauthor:: Dominic Gaiero &lt;dgaiero@calpoly.edu&gt;</span>
 <span class="sd">&quot;&quot;&quot;</span>
@@ -255,13 +256,14 @@
 <span class="sd">        :type voltage_range: str</span>
 <span class="sd">        :raises: MalformedParameterException</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">voltage_range</span> <span class="o">=</span> <span class="n">voltage_range</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">voltage_range</span> <span class="o">==</span> <span class="s2">&quot;HIGH&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;VOLTage:RANGe P20V&quot;</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">voltage_range</span> <span class="o">==</span> <span class="s2">&quot;LOW&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;VOLTage:RANGe P8V&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span>
-                <span class="n">voltage_range</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;HIGH&quot;</span><span class="p">,</span> <span class="s2">&quot;LOW&quot;</span><span class="p">])</span></div>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span><span class="n">voltage_range</span><span class="p">,</span>
+                                                        <span class="p">[</span><span class="s2">&quot;HIGH&quot;</span><span class="p">,</span> <span class="s2">&quot;LOW&quot;</span><span class="p">])</span></div>
 
 <div class="viewcode-block" id="Agilent364XA.get_voltage_range"><a class="viewcode-back" href="../index.html#agilent_e3640a.Agilent364XA.get_voltage_range">[docs]</a>    <span class="k">def</span> <span class="nf">get_voltage_range</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>

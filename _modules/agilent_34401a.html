@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>agilent_34401a &mdash; cpee-VISA 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> cpee-VISA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cpee-VISA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>agilent_34401a</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for agilent_34401a</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">.. module:: agilent_34401a</span>
+<span class="sd">    :platform: Windows</span>
+<span class="sd">    :synopsis: Agilent 34401A basic VISA library for python</span>
+<span class="sd">        utilizng the super Instrument VISA template.</span>
+
+<span class="sd">.. moduleauthor:: Dominic Gaiero &lt;dgaiero@calpoly.edu&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">exceptions</span>
+
+<span class="kn">from</span> <span class="nn">instrument</span> <span class="k">import</span> <span class="n">Instrument</span>
+
+
+<div class="viewcode-block" id="Agilent34401A"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A">[docs]</a><span class="k">class</span> <span class="nc">Agilent34401A</span><span class="p">(</span><span class="n">Instrument</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Agilent (HP) 34401A Multimeter VISA interface</span>
+
+<span class="sd">    This interface provides basic functionality for the</span>
+<span class="sd">    Agilent 34401A multimeter.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Agilent34401A.current_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.current_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">current_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measurement_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Measures either AC or DC current.</span>
+
+<span class="sd">        :param measurement_type: AC or DC measurement</span>
+<span class="sd">        :type measurement_type: str</span>
+<span class="sd">        :rtype: float</span>
+<span class="sd">        :raises: MalformedParamterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">measurement_type</span> <span class="o">=</span> <span class="n">measurement_type</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">measurement_type</span> <span class="o">==</span> <span class="s2">&quot;AC&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">measurement_type</span> <span class="o">==</span> <span class="s2">&quot;DC&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+                <span class="n">f</span><span class="s2">&quot;MEASure:CURRent:</span><span class="si">{measurement_type}</span><span class="s2">? DEF,DEF&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span><span class="n">measurement_type</span><span class="p">,</span>
+                                                    <span class="p">[</span><span class="s2">&quot;AC&quot;</span><span class="p">,</span> <span class="s2">&quot;DC&quot;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="Agilent34401A.voltage_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.voltage_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">voltage_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measurement_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Measures either AC or DC voltage.</span>
+
+<span class="sd">        :param measurement_type: AC or DC measurement</span>
+<span class="sd">        :type measurement_type: str</span>
+<span class="sd">        :rtype: float</span>
+<span class="sd">        :raises: MalformedParamterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">measurement_type</span> <span class="o">=</span> <span class="n">measurement_type</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">measurement_type</span> <span class="o">==</span> <span class="s2">&quot;AC&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">measurement_type</span> <span class="o">==</span> <span class="s2">&quot;DC&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+                <span class="n">f</span><span class="s2">&quot;MEASure:VOLTage:</span><span class="si">{measurement_type}</span><span class="s2">? DEF,DEF&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span><span class="n">measurement_type</span><span class="p">,</span>
+                                                    <span class="p">[</span><span class="s2">&quot;AC&quot;</span><span class="p">,</span> <span class="s2">&quot;DC&quot;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="Agilent34401A.resistance_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.resistance_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">resistance_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measurement_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Measures either two or four wire resistance.</span>
+
+<span class="sd">        :param measurement_type: TWO or FOUR wire measurement</span>
+<span class="sd">        :type measurement_type: str</span>
+<span class="sd">        :rtype: float</span>
+<span class="sd">        :raises: MalformedParamterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">measurement_type</span> <span class="o">==</span> <span class="s2">&quot;TWO&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+                <span class="n">f</span><span class="s2">&quot;MEASure:RESistance? DEF,DEF&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">measurement_type</span> <span class="o">==</span> <span class="s2">&quot;FOUR&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+                <span class="n">f</span><span class="s2">&quot;MEASure:FRESistance? DEF,DEF&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span>
+                <span class="n">measurement_type</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;TWO&quot;</span><span class="p">,</span> <span class="s2">&quot;FOUR&quot;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="Agilent34401A.frequency_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.frequency_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">frequency_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Measures frequency.</span>
+
+<span class="sd">        :rtype: float</span>
+<span class="sd">        :raises: MalformedParamterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;MEASure:FREQuency? DEF,DEF&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent34401A.period_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.period_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">period_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Measures the period of a signal.</span>
+
+<span class="sd">        :rtype: float</span>
+<span class="sd">        :raises: MalformedParamterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;MEASure:PERiod? DEF,DEF&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent34401A.continuity_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.continuity_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">continuity_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Measures contunity of a wire.</span>
+
+<span class="sd">        :rtype: float</span>
+<span class="sd">        :raises: MalformedParamterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;MMEASure:CONTinuity?&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent34401A.diode_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.diode_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">diode_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Preset and make a diode measurement.</span>
+
+<span class="sd">        :rtype: float</span>
+<span class="sd">        :raises: MalformedParamterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;MEASure:DIODe?&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent34401A.beep"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.beep">[docs]</a>    <span class="k">def</span> <span class="nf">beep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Beeps instrument</span>
+
+<span class="sd">        Sends beep command to instrument.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;SYSTem:BEEPer&quot;</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Dominic Gaiero
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

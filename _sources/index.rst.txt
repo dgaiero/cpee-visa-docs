@@ -15,6 +15,11 @@ Agilent E3640A
 .. automodule:: agilent_e3640a
    :members:
 
+Agilent 34401A
+==============
+.. automodule:: agilent_34401a
+   :members:
+
 VISA Instrument Template
 ========================
 .. automodule:: instrument
