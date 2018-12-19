@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview: module code &mdash; cpee-VISA 0.0.1 documentation</title>
+  <title>exceptions &mdash; cpee-VISA 0.0.1 documentation</title>
   
 
   
@@ -121,7 +121,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Overview: module code</li>
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>exceptions</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -136,11 +138,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>All modules for which code is available</h1>
-<ul><li><a href="agilent_e3640a.html">agilent_e3640a</a></li>
-<li><a href="exceptions.html">exceptions</a></li>
-<li><a href="instrument.html">instrument</a></li>
-</ul>
+  <h1>Source code for exceptions</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Exceptions class holds exceptions that are called throughout instruments.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MalformedParamterException"><a class="viewcode-back" href="../index.html#exceptions.MalformedParamterException">[docs]</a><span class="k">class</span> <span class="nc">MalformedParamterException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This exception is raised when a paramter is incorrect.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">expected_parameter</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param parameter: parameter given to instrument</span>
+<span class="sd">        :type parameter: str</span>
+<span class="sd">        :param expected_parameter: Parameter that instrument expected</span>
+<span class="sd">        :type expected_parameter: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">f</span><span class="s2">&quot;Recieved parameter: </span><span class="si">{parameter}</span><span class="s2">. Expected parameters: </span><span class="si">{expected_parameter}</span><span class="s2">&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MalformedParamterException</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InstrumentError"><a class="viewcode-back" href="../index.html#exceptions.InstrumentError">[docs]</a><span class="k">class</span> <span class="nc">InstrumentError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This exception is raised when an instrument has an error.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+</pre></div>
 
            </div>
            

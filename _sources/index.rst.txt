@@ -20,10 +20,14 @@ VISA Instrument Template
 .. automodule:: instrument
    :members:
 
+Exceptions
+========================
+.. automodule:: exceptions
+   :members:
+
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`

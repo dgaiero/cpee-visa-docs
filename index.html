@@ -81,6 +81,7 @@
 <li><a class="reference internal" href="#">Cal Poly EE VISA Equipment Libraries</a></li>
 <li><a class="reference internal" href="#module-agilent_e3640a">Agilent E3640A</a></li>
 <li><a class="reference internal" href="#module-instrument">VISA Instrument Template</a></li>
+<li><a class="reference internal" href="#module-exceptions">Exceptions</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 </div>
@@ -389,6 +390,12 @@ regardless of the output level set.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="instrument.Instrument.close_connection">
+<code class="descname">close_connection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/instrument.html#Instrument.close_connection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.close_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes connection to instrument</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="instrument.Instrument.custom_command">
 <code class="descname">custom_command</code><span class="sig-paren">(</span><em>function_name: str</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/instrument.html#Instrument.custom_command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.custom_command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call a function in pyvisa.</p>
@@ -502,12 +509,27 @@ executing any additional commands over the interface.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-exceptions">
+<span id="exceptions"></span><h1>Exceptions<a class="headerlink" href="#module-exceptions" title="Permalink to this headline">¶</a></h1>
+<p>Exceptions class holds exceptions that are called throughout instruments.</p>
+<dl class="exception">
+<dt id="exceptions.InstrumentError">
+<em class="property">exception </em><code class="descname">InstrumentError</code><a class="reference internal" href="_modules/exceptions.html#InstrumentError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exceptions.InstrumentError" title="Permalink to this definition">¶</a></dt>
+<dd><p>This exception is raised when an instrument has an error.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="exceptions.MalformedParamterException">
+<em class="property">exception </em><code class="descname">MalformedParamterException</code><span class="sig-paren">(</span><em>parameter: str</em>, <em>expected_parameter: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exceptions.html#MalformedParamterException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exceptions.MalformedParamterException" title="Permalink to this definition">¶</a></dt>
+<dd><p>This exception is raised when a paramter is incorrect.</p>
+</dd></dl>
+
+</div>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
 <li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 </ul>
 </div>
 
