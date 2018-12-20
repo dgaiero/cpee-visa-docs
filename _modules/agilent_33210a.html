@@ -1,0 +1,497 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>agilent_33210a &mdash; cpee-VISA 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> cpee-VISA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../instrument.html">VISA Instrument Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agilent_e3640a.html">Agilent E3640A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agilent_34401a.html">Agilent 34401A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agilent_33210a.html">Agilent 33210A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cpee-VISA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>agilent_33210a</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for agilent_33210a</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">.. module:: agilent_33210a</span>
+<span class="sd">    :platform: Windows</span>
+<span class="sd">    :synopsis: Agilent 33210A basic VISA library for python</span>
+<span class="sd">        utilizng the super Instrument VISA template.</span>
+
+<span class="sd">.. moduleauthor:: Dominic Gaiero &lt;dgaiero@calpoly.edu&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">exceptions</span>
+
+<span class="kn">from</span> <span class="nn">instrument</span> <span class="k">import</span> <span class="n">Instrument</span>
+
+<div class="viewcode-block" id="Agilent33210A"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A">[docs]</a><span class="k">class</span> <span class="nc">Agilent33210A</span><span class="p">(</span><span class="n">Instrument</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Agilent 33210A 10 MHz Function / Arbitrary Waveform Generator VISA interface</span>
+
+<span class="sd">    This interface provides basic functionality for the</span>
+<span class="sd">    Agilent 33210A Arbitrary Waveform Generator.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Agilent33210A.set_voltage_unit"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.set_voltage_unit">[docs]</a>    <span class="k">def</span> <span class="nf">set_voltage_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Select the units for output amplitude (does not affect offset voltage or</span>
+<span class="sd">        high/low levels). The default is VPP.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            The output units for amplitude cannot be set to dBm if the output</span>
+<span class="sd">            termination is currently set to “high impedance”.</span>
+
+<span class="sd">        :param unit: Output type of VPP or VRMS or DBM.</span>
+<span class="sd">        :type unit: str</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">!=</span> <span class="s2">&quot;VPP&quot;</span> <span class="ow">or</span> <span class="n">unit</span> <span class="o">!=</span> <span class="s2">&quot;VRMS&quot;</span> <span class="ow">or</span> <span class="n">unit</span> <span class="o">!=</span> <span class="s2">&quot;DBM&quot;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span>
+                                                        <span class="p">[</span><span class="s2">&quot;VPP&quot;</span><span class="p">,</span> <span class="s2">&quot;VRMS&quot;</span><span class="p">,</span> <span class="s2">&quot;DBM&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;VOLTage:UNIT </span><span class="si">{unit}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.get_voltage_unit"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.get_voltage_unit">[docs]</a>    <span class="k">def</span> <span class="nf">get_voltage_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the output amplitude in the units set by the most recent</span>
+<span class="sd">        `VOLT:UNIT` command.</span>
+
+<span class="sd">        :rtype: float</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;VOLTage:UNIT?&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.set_output_load"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.set_output_load">[docs]</a>    <span class="k">def</span> <span class="nf">set_output_load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">load</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Select the desired output termination (i.e., the impedance of the load</span>
+<span class="sd">        attached to the output of the Agilent 33210A). The specified value is used</span>
+<span class="sd">        for amplitude, offset, and high/low level settings. You can set the load to</span>
+<span class="sd">        any value from 1Ω to 10 kΩ.</span>
+
+<span class="sd">        :rtype: float</span>
+<span class="sd">        :raises: MalformedParameterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_output_load</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;OUTPut? MINimum&quot;</span><span class="p">))</span>
+        <span class="n">max_output_load</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;OUTPut? MAXimum&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">load</span> <span class="o">&lt;</span> <span class="n">min_output_load</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">load</span> <span class="o">&gt;</span> <span class="n">max_output_load</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span><span class="n">load</span><span class="p">,</span>
+                                                        <span class="n">f</span><span class="s2">&quot;</span><span class="si">{min_output_load}</span><span class="s2"> - </span><span class="si">{max_output_load}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;OUTPut:LOAD </span><span class="si">{load}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.set_output_highz"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.set_output_highz">[docs]</a>    <span class="k">def</span> <span class="nf">set_output_highz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set output termination to “high impedance” (&gt;10 kΩ).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;OUTPut:LOAD INFinity&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.get_output_load"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.get_output_load">[docs]</a>    <span class="k">def</span> <span class="nf">get_output_load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return output load setting.</span>
+
+<span class="sd">        :rtype: float</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;OUTPut:LOAD?&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.set_output_polarity"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.set_output_polarity">[docs]</a>    <span class="k">def</span> <span class="nf">set_output_polarity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">polarity</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        In the normal mode (default), the waveform goes positive during the first part of the cycle.</span>
+<span class="sd">        In the inverted mode, the waveform goes negative during the first part of</span>
+<span class="sd">        the cycle.</span>
+
+<span class="sd">        :param polarity: Polarity of signal of NORM or INV</span>
+<span class="sd">        :type polarity: str</span>
+<span class="sd">        :raises: MalformedParameterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">polarity</span> <span class="o">=</span> <span class="n">polarity</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">polarity</span> <span class="o">==</span> <span class="s2">&quot;NORM&quot;</span><span class="p">:</span>
+            <span class="n">polarity</span> <span class="o">=</span> <span class="s2">&quot;NORMal&quot;</span>
+        <span class="k">elif</span> <span class="n">polarity</span> <span class="o">==</span> <span class="s2">&quot;INV&quot;</span><span class="p">:</span>
+            <span class="n">polarity</span> <span class="o">=</span> <span class="s2">&quot;INVerted&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span><span class="n">polarity</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;NORM&quot;</span><span class="p">,</span> <span class="s2">&quot;INV&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;OUTPut:POLarity </span><span class="si">{polarity}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.get_output_polarity"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.get_output_polarity">[docs]</a>    <span class="k">def</span> <span class="nf">get_output_polarity</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets output polarity (NORM or INV)</span>
+
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;OUTPut:POLarity?&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.set_function"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.set_function">[docs]</a>    <span class="k">def</span> <span class="nf">set_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">function</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Select the output function. The selected waveform is output using the</span>
+<span class="sd">        previously selected frequency, amplitude, and offset voltage settings.</span>
+
+<span class="sd">        :param function: Type of function with options of SIN, SQU, RAMP, PULS</span>
+<span class="sd">            NOIS, DC</span>
+<span class="sd">        :type function: str</span>
+<span class="sd">        :raises: MalformedParameterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">function</span> <span class="o">=</span> <span class="n">function</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="n">functions</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;SIN&quot;</span><span class="p">:</span> <span class="s2">&quot;SINe&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;SQU&quot;</span><span class="p">:</span> <span class="s2">&quot;SQUare&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;RAMP&quot;</span><span class="p">:</span> <span class="s2">&quot;RAMP&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;PULS&quot;</span><span class="p">:</span> <span class="s2">&quot;PULSe&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;NOIS&quot;</span><span class="p">:</span> <span class="s2">&quot;NPISe&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;DC&quot;</span><span class="p">:</span> <span class="s2">&quot;DC&quot;</span><span class="p">}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">function</span> <span class="o">=</span> <span class="n">functions</span><span class="p">[</span><span class="n">function</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;FUNCtion </span><span class="si">{function}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">functions</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.get_function"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.get_function">[docs]</a>    <span class="k">def</span> <span class="nf">get_function</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The FUNC? query</span>
+<span class="sd">        returns “SIN”, “SQU”, “RAMP”, “PULS”, “NOIS”, “DC”, or “USER”.</span>
+
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;FUNCtion?&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.set_frequency"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.set_frequency">[docs]</a>    <span class="k">def</span> <span class="nf">set_frequency</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frequency</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set specified frequency.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            If you want to query the minimum and maximum frequency with</span>
+<span class="sd">            the current settings, run: :python:`get_frequency(freq_type=&quot;MIN&quot;)`</span>
+<span class="sd">            or :python:`get_frequency(freq_type=&quot;MAX&quot;)`</span>
+
+<span class="sd">        :param frequency: Requested Frequency</span>
+<span class="sd">        :type frequency: float</span>
+<span class="sd">        :raises: MalformedParameterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_frequency</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;FREQuency? MINimum&quot;</span><span class="p">))</span>
+        <span class="n">max_frequency</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;FREQuency? MAXimum&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">frequency</span> <span class="o">&lt;</span> <span class="n">min_frequency</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">frequency</span> <span class="o">&gt;</span> <span class="n">max_frequency</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span>
+                                                        <span class="n">f</span><span class="s2">&quot;</span><span class="si">{min_frequency}</span><span class="s2"> - </span><span class="si">{max_frequency}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;FREQuency </span><span class="si">{frequency}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.get_frequency"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.get_frequency">[docs]</a>    <span class="k">def</span> <span class="nf">get_frequency</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">freq_type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get frequency set or query for maximum or minimum frequency</span>
+
+<span class="sd">        :param freq_type: Get MIN or MAX frequency</span>
+<span class="sd">        :type freq_type: str</span>
+<span class="sd">        :rtype: float</span>
+<span class="sd">        :raises: MalformedParameterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">freq_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;FREQuency?&quot;</span><span class="p">)</span>
+        <span class="n">freq_types</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;MIN&quot;</span><span class="p">:</span> <span class="s2">&quot;MINimum&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;MAX&quot;</span><span class="p">:</span> <span class="s2">&quot;MAXimum&quot;</span><span class="p">}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">freq_type</span> <span class="o">=</span> <span class="n">freq_types</span><span class="p">[</span><span class="n">freq_type</span><span class="p">]</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;FREQuency? </span><span class="si">{freq_type}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span>
+                <span class="n">freq_type</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">freq_types</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.set_amplitude"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.set_amplitude">[docs]</a>    <span class="k">def</span> <span class="nf">set_amplitude</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set specified amplitude.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            If you want to query the minimum and maximum amplitude with</span>
+<span class="sd">            the current settings, run:</span>
+<span class="sd">            :python:`get_amplitude(amplitude_type=&quot;MIN&quot;)`</span>
+<span class="sd">            or :python:`get_amplitude(amplitude_type=&quot;MAX&quot;)`</span>
+
+<span class="sd">        :param amplitude: Requested Amplitude</span>
+<span class="sd">        :type amplitude: float</span>
+<span class="sd">        :raises: MalformedParameterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_amplitude</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;VOLTage? MINimum&quot;</span><span class="p">))</span>
+        <span class="n">max_amplitude</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;VOLTage? MAXimum&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">amplitude</span> <span class="o">&lt;</span> <span class="n">min_amplitude</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">amplitude</span> <span class="o">&gt;</span> <span class="n">max_amplitude</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span><span class="n">amplitude</span><span class="p">,</span>
+                                                        <span class="n">f</span><span class="s2">&quot;</span><span class="si">{min_amplitude}</span><span class="s2"> - </span><span class="si">{max_amplitude}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;VOLTage </span><span class="si">{amplitude}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.get_amplitude"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.get_amplitude">[docs]</a>    <span class="k">def</span> <span class="nf">get_amplitude</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amplitude_type</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get amplitude set or query for maximum or minimum amplitude</span>
+
+<span class="sd">        :param amplitude_type: Get MIN or MAX amplitude</span>
+<span class="sd">        :type amplitude_type: str</span>
+<span class="sd">        :rtype: float</span>
+<span class="sd">        :raises: MalformedParameterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">amplitude_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;FREQuency?&quot;</span><span class="p">)</span>
+        <span class="n">amplitude_types</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;MIN&quot;</span><span class="p">:</span> <span class="s2">&quot;MINimum&quot;</span><span class="p">,</span>
+                           <span class="s2">&quot;MAX&quot;</span><span class="p">:</span> <span class="s2">&quot;MAXimum&quot;</span><span class="p">}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">amplitude_type</span> <span class="o">=</span> <span class="n">amplitude_types</span><span class="p">[</span><span class="n">amplitude_type</span><span class="p">]</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;VOLTage? </span><span class="si">{amplitude_type}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span>
+                <span class="n">amplitude_type</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">amplitude_types</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.set_offset"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.set_offset">[docs]</a>    <span class="k">def</span> <span class="nf">set_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set specified offset.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            If you want to query the minimum and maximum offset with</span>
+<span class="sd">            the current settings, run:</span>
+<span class="sd">            :python:`get_offset(offset_type=&quot;MIN&quot;)`</span>
+<span class="sd">            or :python:`get_offset(offset_type=&quot;MAX&quot;)`</span>
+
+<span class="sd">        :param offset: Requested Offset</span>
+<span class="sd">        :type offset: float</span>
+<span class="sd">        :raises: MalformedParameterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_offset</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;VOLTage? MINimum&quot;</span><span class="p">))</span>
+        <span class="n">max_offset</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;VOLTage? MAXimum&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">offset</span> <span class="o">&lt;</span> <span class="n">min_offset</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">offset</span> <span class="o">&gt;</span> <span class="n">max_offset</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span>
+                                                        <span class="n">f</span><span class="s2">&quot;</span><span class="si">{min_offset}</span><span class="s2"> - </span><span class="si">{max_offset}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;VOLTage:OFFSet </span><span class="si">{offset}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.get_offset"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.get_offset">[docs]</a>    <span class="k">def</span> <span class="nf">get_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset_type</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get offset set or query for maximum or minimum offset</span>
+
+<span class="sd">        :param offset_type: Get MIN or MAX offset</span>
+<span class="sd">        :type offset_type: str</span>
+<span class="sd">        :rtype: float</span>
+<span class="sd">        :raises: MalformedParameterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">offset_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;VOLTage:OFFSet?&quot;</span><span class="p">)</span>
+        <span class="n">offset_types</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;MIN&quot;</span><span class="p">:</span> <span class="s2">&quot;MINimum&quot;</span><span class="p">,</span>
+                           <span class="s2">&quot;MAX&quot;</span><span class="p">:</span> <span class="s2">&quot;MAXimum&quot;</span><span class="p">}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">offset_type</span> <span class="o">=</span> <span class="n">offset_types</span><span class="p">[</span><span class="n">offset_type</span><span class="p">]</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;VOLTage? </span><span class="si">{offset_type}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span>
+                <span class="n">offset_type</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">offset_types</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span></div>
+
+    <span class="c1"># Can I put this somewhere else?</span>
+
+<div class="viewcode-block" id="Agilent33210A.beep"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.beep">[docs]</a>    <span class="k">def</span> <span class="nf">beep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Beeps instrument</span>
+
+<span class="sd">        Sends beep command to instrument.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;SYSTem:BEEPer&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.get_erors"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.get_erors">[docs]</a>    <span class="k">def</span> <span class="nf">get_erors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets errors from machine.</span>
+
+<span class="sd">        A record of up to 20 errors is stored in the power supply’s error queue.</span>
+<span class="sd">            Errors are retrieved in first-in-first-out (FIFO) order.</span>
+<span class="sd">            The first error returned is the first error that was stored.</span>
+
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># TODO: Convert to List</span>
+        <span class="n">errors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;SYSTem:ERRor?&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">errors</span></div>
+
+<div class="viewcode-block" id="Agilent33210A.set_output_state"><a class="viewcode-back" href="../agilent_33210a.html#agilent_33210a.Agilent33210A.set_output_state">[docs]</a>    <span class="k">def</span> <span class="nf">set_output_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Turns supply output on or off</span>
+
+<span class="sd">        :param state: ON or OFF status of power supply</span>
+<span class="sd">        :type state: str</span>
+<span class="sd">        :raises: MalformedParameterException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">state</span> <span class="o">!=</span> <span class="s2">&quot;OFF&quot;</span> <span class="ow">or</span> <span class="n">state</span> <span class="o">!=</span> <span class="s2">&quot;ON&quot;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;ON&quot;</span><span class="p">,</span> <span class="s2">&quot;OFF&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;OUTput </span><span class="si">{state}</span><span class="s2">&quot;</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Dominic Gaiero
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

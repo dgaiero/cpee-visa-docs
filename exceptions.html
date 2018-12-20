@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python Module Index &mdash; cpee-VISA 0.0.1 documentation</title>
+  <title>Exceptions &mdash; cpee-VISA 0.0.1 documentation</title>
   
 
   
@@ -28,13 +28,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
- 
-
-    <script type="text/javascript">
-      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
-    </script>
-
-
+    <link rel="prev" title="Agilent 33210A" href="agilent_33210a.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -84,12 +78,12 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="instrument.html">VISA Instrument Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agilent_e3640a.html">Agilent E3640A</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agilent_34401a.html">Agilent 34401A</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agilent_33210a.html">Agilent 33210A</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Exceptions</a></li>
 </ul>
 
             
@@ -135,10 +129,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Python Module Index</li>
+      <li>Exceptions</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/exceptions.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -150,60 +148,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
+  <div class="section" id="module-exceptions">
+<span id="exceptions"></span><h1>Exceptions<a class="headerlink" href="#module-exceptions" title="Permalink to this headline">¶</a></h1>
+<p>Exceptions class holds exceptions that are called throughout instruments.</p>
+<dl class="exception">
+<dt id="exceptions.InstrumentError">
+<em class="property">exception </em><code class="descname">InstrumentError</code><a class="reference internal" href="_modules/exceptions.html#InstrumentError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exceptions.InstrumentError" title="Permalink to this definition">¶</a></dt>
+<dd><p>This exception is raised when an instrument has an error.</p>
+</dd></dl>
 
-   <h1>Python Module Index</h1>
+<dl class="exception">
+<dt id="exceptions.MalformedParamterException">
+<em class="property">exception </em><code class="descname">MalformedParamterException</code><span class="sig-paren">(</span><em>parameter: str</em>, <em>expected_parameter: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exceptions.html#MalformedParamterException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exceptions.MalformedParamterException" title="Permalink to this definition">¶</a></dt>
+<dd><p>This exception is raised when a paramter is incorrect.</p>
+</dd></dl>
 
-   <div class="modindex-jumpbox">
-   <a href="#cap-a"><strong>a</strong></a> | 
-   <a href="#cap-e"><strong>e</strong></a> | 
-   <a href="#cap-i"><strong>i</strong></a>
-   </div>
-
-   <table class="indextable modindextable">
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-a"><td></td><td>
-       <strong>a</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="agilent_33210a.html#module-agilent_33210a"><code class="xref">agilent_33210a</code></a> <em>(Windows)</em></td><td>
-       <em>Agilent 33210A basic VISA library for python
-utilizng the super Instrument VISA template.</em></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="agilent_34401a.html#module-agilent_34401a"><code class="xref">agilent_34401a</code></a> <em>(Windows)</em></td><td>
-       <em>Agilent 34401A basic VISA library for python
-utilizng the super Instrument VISA template.</em></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="agilent_e3640a.html#module-agilent_e3640a"><code class="xref">agilent_e3640a</code></a> <em>(Windows)</em></td><td>
-       <em>Agilent E3640A basic VISA library for python
-utilizng the super Instrument VISA template.</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-e"><td></td><td>
-       <strong>e</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="exceptions.html#module-exceptions"><code class="xref">exceptions</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-i"><td></td><td>
-       <strong>i</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="instrument.html#module-instrument"><code class="xref">instrument</code></a></td><td>
-       <em></em></td></tr>
-   </table>
+</div>
 
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="agilent_33210a.html" class="btn btn-neutral" title="Agilent 33210A" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

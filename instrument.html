@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>VISA Instrument Template &mdash; cpee-VISA 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Agilent E3640A" href="agilent_e3640a.html" />
+    <link rel="prev" title="Cal Poly EE VISA Equipment Libraries" href="index.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> cpee-VISA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">VISA Instrument Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agilent_e3640a.html">Agilent E3640A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agilent_34401a.html">Agilent 34401A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agilent_33210a.html">Agilent 33210A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">cpee-VISA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>VISA Instrument Template</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/instrument.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-instrument">
+<span id="visa-instrument-template"></span><h1>VISA Instrument Template<a class="headerlink" href="#module-instrument" title="Permalink to this headline">¶</a></h1>
+<p>Instrument class to define common functionalities for all instruments.</p>
+<dl class="class">
+<dt id="instrument.Instrument">
+<em class="property">class </em><code class="descclassname">instrument.</code><code class="descname">Instrument</code><span class="sig-paren">(</span><em>address: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/instrument.html#Instrument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class to define common functionality for VISA instruments.</p>
+<dl class="method">
+<dt id="instrument.Instrument.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/instrument.html#Instrument.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear all event registers and Status Byte register.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="instrument.Instrument.close_connection">
+<code class="descname">close_connection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/instrument.html#Instrument.close_connection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.close_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes connection to instrument</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="instrument.Instrument.custom_command">
+<code class="descname">custom_command</code><span class="sig-paren">(</span><em>function_name: str</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/instrument.html#Instrument.custom_command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.custom_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call a function in pyvisa.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>function_name</strong> – Function to call</li>
+<li><strong>args</strong> – Arguments of function</li>
+<li><strong>kwargs</strong> – Kewrod Arguments of function</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="instrument.Instrument.custom_query">
+<code class="descname">custom_query</code><span class="sig-paren">(</span><em>query: str</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/instrument.html#Instrument.custom_query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.custom_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run a query for a custom message and return message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>query</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Query to run</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="instrument.Instrument.custom_write">
+<code class="descname">custom_write</code><span class="sig-paren">(</span><em>write: str</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/instrument.html#Instrument.custom_write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.custom_write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run a write for a custom message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>write</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Write to run</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="instrument.Instrument.event_status_register">
+<code class="descname">event_status_register</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/instrument.html#Instrument.event_status_register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.event_status_register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query the Standard event register</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="instrument.Instrument.identity">
+<code class="descname">identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/instrument.html#Instrument.identity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.identity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns identity string</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="instrument.Instrument.operation_complete">
+<code class="descname">operation_complete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/instrument.html#Instrument.operation_complete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.operation_complete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return “1” to the output buffer after the command is executed.
+Use the <cite>*OPC?</cite> command to guarantee that commands previously
+sent to the instrument have completed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="instrument.Instrument.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/instrument.html#Instrument.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the instrument to its <strong>power-on</strong> state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="instrument.Instrument.test">
+<code class="descname">test</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/instrument.html#Instrument.test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a complete self-test of the instrument.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="instrument.Instrument.trigger">
+<code class="descname">trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/instrument.html#Instrument.trigger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.trigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a trigger to the trigger subsystem that has selected a bus (software)
+trigger as its source <cite>(TRIG:SOUR BUS)</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="instrument.Instrument.wait">
+<code class="descname">wait</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/instrument.html#Instrument.wait"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#instrument.Instrument.wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instruct the instrument to wait for all pending operations to complete before
+executing any additional commands over the interface.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="agilent_e3640a.html" class="btn btn-neutral float-right" title="Agilent E3640A" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Cal Poly EE VISA Equipment Libraries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Dominic Gaiero
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

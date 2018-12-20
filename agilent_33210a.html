@@ -1,0 +1,525 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Agilent 33210A &mdash; cpee-VISA 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exceptions" href="exceptions.html" />
+    <link rel="prev" title="Agilent 34401A" href="agilent_34401a.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> cpee-VISA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="instrument.html">VISA Instrument Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agilent_e3640a.html">Agilent E3640A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agilent_34401a.html">Agilent 34401A</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Agilent 33210A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">cpee-VISA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Agilent 33210A</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/agilent_33210a.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-agilent_33210a">
+<span id="agilent-33210a"></span><h1>Agilent 33210A<a class="headerlink" href="#module-agilent_33210a" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-agilent_33210a"></span><dl class="class">
+<dt id="agilent_33210a.Agilent33210A">
+<em class="property">class </em><code class="descclassname">agilent_33210a.</code><code class="descname">Agilent33210A</code><span class="sig-paren">(</span><em>address: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A" title="Permalink to this definition">¶</a></dt>
+<dd><p>Agilent 33210A 10 MHz Function / Arbitrary Waveform Generator VISA interface</p>
+<p>This interface provides basic functionality for the
+Agilent 33210A Arbitrary Waveform Generator.</p>
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.beep">
+<code class="descname">beep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.beep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.beep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Beeps instrument</p>
+<p>Sends beep command to instrument.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.get_amplitude">
+<code class="descname">get_amplitude</code><span class="sig-paren">(</span><em>amplitude_type=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.get_amplitude"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.get_amplitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get amplitude set or query for maximum or minimum amplitude</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>amplitude_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Get MIN or MAX amplitude</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">MalformedParameterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.get_erors">
+<code class="descname">get_erors</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.get_erors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.get_erors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets errors from machine.</p>
+<dl class="docutils">
+<dt>A record of up to 20 errors is stored in the power supply’s error queue.</dt>
+<dd>Errors are retrieved in first-in-first-out (FIFO) order.
+The first error returned is the first error that was stored.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.get_frequency">
+<code class="descname">get_frequency</code><span class="sig-paren">(</span><em>freq_type=None</em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.get_frequency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.get_frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get frequency set or query for maximum or minimum frequency</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>freq_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Get MIN or MAX frequency</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">MalformedParameterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.get_function">
+<code class="descname">get_function</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.get_function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.get_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>The FUNC? query
+returns “SIN”, “SQU”, “RAMP”, “PULS”, “NOIS”, “DC”, or “USER”.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.get_offset">
+<code class="descname">get_offset</code><span class="sig-paren">(</span><em>offset_type=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.get_offset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.get_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get offset set or query for maximum or minimum offset</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>offset_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Get MIN or MAX offset</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">MalformedParameterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.get_output_load">
+<code class="descname">get_output_load</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.get_output_load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.get_output_load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return output load setting.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.get_output_polarity">
+<code class="descname">get_output_polarity</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.get_output_polarity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.get_output_polarity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets output polarity (NORM or INV)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.get_voltage_unit">
+<code class="descname">get_voltage_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.get_voltage_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.get_voltage_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the output amplitude in the units set by the most recent
+<cite>VOLT:UNIT</cite> command.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.set_amplitude">
+<code class="descname">set_amplitude</code><span class="sig-paren">(</span><em>amplitude: float</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.set_amplitude"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.set_amplitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set specified amplitude.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you want to query the minimum and maximum amplitude with
+the current settings, run:
+<code class="code python docutils literal notranslate"><span class="name"><span class="pre">get_amplitude</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">amplitude_type</span></span><span class="operator"><span class="pre">=</span></span><span class="literal string double"><span class="pre">”MIN”</span></span><span class="punctuation"><span class="pre">)</span></span></code>
+or <code class="code python docutils literal notranslate"><span class="name"><span class="pre">get_amplitude</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">amplitude_type</span></span><span class="operator"><span class="pre">=</span></span><span class="literal string double"><span class="pre">”MAX”</span></span><span class="punctuation"><span class="pre">)</span></span></code></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>amplitude</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – Requested Amplitude</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">MalformedParameterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.set_frequency">
+<code class="descname">set_frequency</code><span class="sig-paren">(</span><em>frequency: float</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.set_frequency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.set_frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set specified frequency.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you want to query the minimum and maximum frequency with
+the current settings, run: <code class="code python docutils literal notranslate"><span class="name"><span class="pre">get_frequency</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">freq_type</span></span><span class="operator"><span class="pre">=</span></span><span class="literal string double"><span class="pre">”MIN”</span></span><span class="punctuation"><span class="pre">)</span></span></code>
+or <code class="code python docutils literal notranslate"><span class="name"><span class="pre">get_frequency</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">freq_type</span></span><span class="operator"><span class="pre">=</span></span><span class="literal string double"><span class="pre">”MAX”</span></span><span class="punctuation"><span class="pre">)</span></span></code></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>frequency</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – Requested Frequency</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">MalformedParameterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.set_function">
+<code class="descname">set_function</code><span class="sig-paren">(</span><em>function: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.set_function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.set_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the output function. The selected waveform is output using the
+previously selected frequency, amplitude, and offset voltage settings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>function</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Type of function with options of SIN, SQU, RAMP, PULS
+NOIS, DC</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">MalformedParameterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.set_offset">
+<code class="descname">set_offset</code><span class="sig-paren">(</span><em>offset: float</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.set_offset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.set_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set specified offset.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you want to query the minimum and maximum offset with
+the current settings, run:
+<code class="code python docutils literal notranslate"><span class="name"><span class="pre">get_offset</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">offset_type</span></span><span class="operator"><span class="pre">=</span></span><span class="literal string double"><span class="pre">”MIN”</span></span><span class="punctuation"><span class="pre">)</span></span></code>
+or <code class="code python docutils literal notranslate"><span class="name"><span class="pre">get_offset</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">offset_type</span></span><span class="operator"><span class="pre">=</span></span><span class="literal string double"><span class="pre">”MAX”</span></span><span class="punctuation"><span class="pre">)</span></span></code></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – Requested Offset</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">MalformedParameterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.set_output_highz">
+<code class="descname">set_output_highz</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.set_output_highz"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.set_output_highz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set output termination to “high impedance” (&gt;10 kΩ).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.set_output_load">
+<code class="descname">set_output_load</code><span class="sig-paren">(</span><em>load: float</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.set_output_load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.set_output_load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the desired output termination (i.e., the impedance of the load
+attached to the output of the Agilent 33210A). The specified value is used
+for amplitude, offset, and high/low level settings. You can set the load to
+any value from 1Ω to 10 kΩ.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">MalformedParameterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.set_output_polarity">
+<code class="descname">set_output_polarity</code><span class="sig-paren">(</span><em>polarity: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.set_output_polarity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.set_output_polarity" title="Permalink to this definition">¶</a></dt>
+<dd><p>In the normal mode (default), the waveform goes positive during the first part of the cycle.
+In the inverted mode, the waveform goes negative during the first part of
+the cycle.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>polarity</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Polarity of signal of NORM or INV</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">MalformedParameterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.set_output_state">
+<code class="descname">set_output_state</code><span class="sig-paren">(</span><em>state: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.set_output_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.set_output_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turns supply output on or off</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – ON or OFF status of power supply</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">MalformedParameterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_33210a.Agilent33210A.set_voltage_unit">
+<code class="descname">set_voltage_unit</code><span class="sig-paren">(</span><em>unit: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_33210a.html#Agilent33210A.set_voltage_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_33210a.Agilent33210A.set_voltage_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the units for output amplitude (does not affect offset voltage or
+high/low levels). The default is VPP.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The output units for amplitude cannot be set to dBm if the output
+termination is currently set to “high impedance”.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>unit</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Output type of VPP or VRMS or DBM.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="exceptions.html" class="btn btn-neutral float-right" title="Exceptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="agilent_34401a.html" class="btn btn-neutral" title="Agilent 34401A" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Dominic Gaiero
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Agilent E3640A &mdash; cpee-VISA 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Agilent 34401A" href="agilent_34401a.html" />
+    <link rel="prev" title="VISA Instrument Template" href="instrument.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> cpee-VISA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="instrument.html">VISA Instrument Template</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Agilent E3640A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agilent_34401a.html">Agilent 34401A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agilent_33210a.html">Agilent 33210A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">cpee-VISA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Agilent E3640A</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/agilent_e3640a.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-agilent_e3640a">
+<span id="agilent-e3640a"></span><h1>Agilent E3640A<a class="headerlink" href="#module-agilent_e3640a" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-agilent_e3640a"></span><dl class="class">
+<dt id="agilent_e3640a.Agilent364XA">
+<em class="property">class </em><code class="descclassname">agilent_e3640a.</code><code class="descname">Agilent364XA</code><span class="sig-paren">(</span><em>address: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Agilent Single Output Power Supply VISA interface</p>
+<p>This class provides basic functionality for the Agilent E3640A power supply.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It may work with any Agilent 364XA power supplies,
+however only the above has been mentioned.</p>
+</div>
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.beep">
+<code class="descname">beep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.beep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.beep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Beeps instrument</p>
+<p>Sends beep command to instrument.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.get_current_actual">
+<code class="descname">get_current_actual</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.get_current_actual"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.get_current_actual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets actual current output</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.get_current_set">
+<code class="descname">get_current_set</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.get_current_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.get_current_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets set current output</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.get_erors">
+<code class="descname">get_erors</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.get_erors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.get_erors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets errors from machine.</p>
+<dl class="docutils">
+<dt>A record of up to 20 errors is stored in the power supply’s error queue.</dt>
+<dd>Errors are retrieved in first-in-first-out (FIFO) order.
+The first error returned is the first error that was stored.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.get_output_set">
+<code class="descname">get_output_set</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List[float]<a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.get_output_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.get_output_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets output current and voltage</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Rtpye:</th><td class="field-body">list[float]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.get_output_state">
+<code class="descname">get_output_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.get_output_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.get_output_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets voltage and current output</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.get_voltage_actual">
+<code class="descname">get_voltage_actual</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.get_voltage_actual"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.get_voltage_actual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets actual voltage output</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.get_voltage_range">
+<code class="descname">get_voltage_range</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.get_voltage_range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.get_voltage_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the current voltage range of HIGH or LOW.</p>
+<p>Runs command <cite>VOLTage:RANGe?</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.get_voltage_set">
+<code class="descname">get_voltage_set</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.get_voltage_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.get_voltage_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets set voltage output</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.set_current">
+<code class="descname">set_current</code><span class="sig-paren">(</span><em>level: float</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.set_current"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.set_current" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets current of power supply.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>level</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – Requested Current Level</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">MalformedParamterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.set_output">
+<code class="descname">set_output</code><span class="sig-paren">(</span><em>voltage: float</em>, <em>current: float</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.set_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.set_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set output current and voltage</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>voltage</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – Output Voltage (between 0 - 20 V)</li>
+<li><strong>current</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – Output Current (between 0 - 3 A)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">MalformedParamterException</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.set_output_state">
+<code class="descname">set_output_state</code><span class="sig-paren">(</span><em>state: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.set_output_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.set_output_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turns supply output on or off</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – ON or OFF status of power supply</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">MalformedParameterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.set_voltage">
+<code class="descname">set_voltage</code><span class="sig-paren">(</span><em>level: float</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.set_voltage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.set_voltage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets voltage of power supply. This will set the voltage to any level
+regardless of the output level set.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>level</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – Requested Voltage Level</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">MalformedParamterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="agilent_e3640a.Agilent364XA.set_voltage_range">
+<code class="descname">set_voltage_range</code><span class="sig-paren">(</span><em>voltage_range: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/agilent_e3640a.html#Agilent364XA.set_voltage_range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#agilent_e3640a.Agilent364XA.set_voltage_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets voltage range to high or low</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>voltage_range</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – HIGH (20V) or LOW (8V)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">MalformedParameterException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="agilent_34401a.html" class="btn btn-neutral float-right" title="Agilent 34401A" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="instrument.html" class="btn btn-neutral" title="VISA Instrument Template" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Dominic Gaiero
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

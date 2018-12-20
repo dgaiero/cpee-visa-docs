@@ -76,8 +76,15 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"></div>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../instrument.html">VISA Instrument Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agilent_e3640a.html">Agilent E3640A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agilent_34401a.html">Agilent 34401A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agilent_33210a.html">Agilent 33210A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
+</ul>
+
             
           
         </div>
@@ -152,7 +159,7 @@
 <span class="kn">from</span> <span class="nn">instrument</span> <span class="k">import</span> <span class="n">Instrument</span>
 
 
-<div class="viewcode-block" id="Agilent34401A"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A">[docs]</a><span class="k">class</span> <span class="nc">Agilent34401A</span><span class="p">(</span><span class="n">Instrument</span><span class="p">):</span>
+<div class="viewcode-block" id="Agilent34401A"><a class="viewcode-back" href="../agilent_34401a.html#agilent_34401a.Agilent34401A">[docs]</a><span class="k">class</span> <span class="nc">Agilent34401A</span><span class="p">(</span><span class="n">Instrument</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Agilent (HP) 34401A Multimeter VISA interface</span>
 
@@ -160,7 +167,7 @@
 <span class="sd">    Agilent 34401A multimeter.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Agilent34401A.current_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.current_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">current_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measurement_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="Agilent34401A.current_measurement"><a class="viewcode-back" href="../agilent_34401a.html#agilent_34401a.Agilent34401A.current_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">current_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measurement_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Measures either AC or DC current.</span>
 
@@ -176,7 +183,7 @@
         <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span><span class="n">measurement_type</span><span class="p">,</span>
                                                     <span class="p">[</span><span class="s2">&quot;AC&quot;</span><span class="p">,</span> <span class="s2">&quot;DC&quot;</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="Agilent34401A.voltage_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.voltage_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">voltage_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measurement_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="Agilent34401A.voltage_measurement"><a class="viewcode-back" href="../agilent_34401a.html#agilent_34401a.Agilent34401A.voltage_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">voltage_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measurement_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Measures either AC or DC voltage.</span>
 
@@ -192,7 +199,7 @@
         <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span><span class="n">measurement_type</span><span class="p">,</span>
                                                     <span class="p">[</span><span class="s2">&quot;AC&quot;</span><span class="p">,</span> <span class="s2">&quot;DC&quot;</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="Agilent34401A.resistance_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.resistance_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">resistance_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measurement_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="Agilent34401A.resistance_measurement"><a class="viewcode-back" href="../agilent_34401a.html#agilent_34401a.Agilent34401A.resistance_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">resistance_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measurement_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Measures either two or four wire resistance.</span>
 
@@ -211,7 +218,7 @@
             <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">MalformedParamterException</span><span class="p">(</span>
                 <span class="n">measurement_type</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;TWO&quot;</span><span class="p">,</span> <span class="s2">&quot;FOUR&quot;</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="Agilent34401A.frequency_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.frequency_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">frequency_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="Agilent34401A.frequency_measurement"><a class="viewcode-back" href="../agilent_34401a.html#agilent_34401a.Agilent34401A.frequency_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">frequency_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Measures frequency.</span>
 
@@ -220,7 +227,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;MEASure:FREQuency? DEF,DEF&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Agilent34401A.period_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.period_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">period_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="Agilent34401A.period_measurement"><a class="viewcode-back" href="../agilent_34401a.html#agilent_34401a.Agilent34401A.period_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">period_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Measures the period of a signal.</span>
 
@@ -229,7 +236,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;MEASure:PERiod? DEF,DEF&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Agilent34401A.continuity_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.continuity_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">continuity_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="Agilent34401A.continuity_measurement"><a class="viewcode-back" href="../agilent_34401a.html#agilent_34401a.Agilent34401A.continuity_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">continuity_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Measures contunity of a wire.</span>
 
@@ -238,7 +245,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;MMEASure:CONTinuity?&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Agilent34401A.diode_measurement"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.diode_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">diode_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="Agilent34401A.diode_measurement"><a class="viewcode-back" href="../agilent_34401a.html#agilent_34401a.Agilent34401A.diode_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">diode_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Preset and make a diode measurement.</span>
 
@@ -247,7 +254,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;MEASure:DIODe?&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Agilent34401A.beep"><a class="viewcode-back" href="../index.html#agilent_34401a.Agilent34401A.beep">[docs]</a>    <span class="k">def</span> <span class="nf">beep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Agilent34401A.beep"><a class="viewcode-back" href="../agilent_34401a.html#agilent_34401a.Agilent34401A.beep">[docs]</a>    <span class="k">def</span> <span class="nf">beep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Beeps instrument</span>
 
